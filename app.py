@@ -1,3 +1,11 @@
+# since I'm a forgetful freddy, here's the process to push to git and heroku
+    # 1. $ pip freeze > requirements.txt
+    # 2. $ git add .
+    # 3. $ git commit -m "<update summary here>"
+    # 4. $ git remove -v
+    # 5. $ git push heroku master
+
+
 from flask import Flask, render_template, url_for, request, redirect
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
