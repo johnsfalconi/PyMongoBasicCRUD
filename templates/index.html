@@ -7,34 +7,41 @@
 {% block body %}
     <div>
 
-        <h1>Task Master</h1>
+        <h1>Movie List - Basic MongoDB CRUD App</h1>
+        <p>(Mongo tutorial gave sample movie data to play with)</p>
+        <br><br>
 
-        {% if tasks|length < 1 %}
-        <h4>There are no tasks</h4>
+        {% if movies|length < 1 %}
+        <h4>There are no movies</h4>
         {% else %}
         <table>
             <tr>
-                <th>Task</th>
-                <th>Added</th>
-                <th>Actions</th>
+                <th>TITLE</th>
+                <th>YEAR</th>
+                <th>TYPE</th>
+                <th>ACTIONS</th>
             </tr>
-            {% for task in tasks %}
+            {% for movie in movies %}
                 <tr>
-                    <td>{{ task.content }}</td>
-                    <td>{{ task.date_created.date() }}</td>
+                    <td>{{ movie['title'] }}</td>
+                    <td>{{ movie['year'] }}</td>
+                    <td>{{ movie['type'] }}</td>
                     <td>
-                        <a href="/delete/{{task.id}}">Delete</a>
+                        <a href="/delete/{{movie['_id']}}">Delete</a>
                         <br>
-                        <a href="/update/{{task.id}}">Update</a>
+                        <a href="/update/{{movie['_id']}}">Update</a>
                     </td>
                 </tr>
             {% endfor %}
         </table>
         {% endif %}
+        <br>
         <form actions="/" method="POST">
-            <input type = "text" name = "content" id = "content">
-            <input type = "submit" value="Add Task">
-        </form>
+            <label>Title:</label><input type = "text" name = "title" id = "title"><br>
+            <label>Year:</label><input type = "text" name = "year" id = "year"><br>
+            <label>Type:</label><input type = "text" name = "type" id = "type"><br> 
+            <input type = "submit" value="Add">
+        </form> 
     </div>
     
 {% endblock %}
