@@ -2,7 +2,7 @@
     # 1. $ pip freeze > requirements.txt
     # 2. $ git add .
     # 3. $ git commit -m "<update summary here>"
-    # 4. $ git remove -v
+    # 4. $ git remote -v
     # 5. $ git push heroku master
 
 
