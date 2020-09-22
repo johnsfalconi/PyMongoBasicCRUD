@@ -12,8 +12,8 @@ from bson.objectid import ObjectId
 from datetime import datetime
 
 app = Flask(__name__)
-app.config['MONGO_DBNAME'] = 'video'
-app.config["MONGO_URI"] = 'mongodb://stallapp:stall123@cluster0-shard-00-00.bjwrh.mongodb.net:27017,cluster0-shard-00-01.bjwrh.mongodb.net:27017,cluster0-shard-00-02.bjwrh.mongodb.net:27017/video?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority'
+app.config['MONGO_DBNAME'] = # DB Name
+app.config["MONGO_URI"] = # MongoDB connection URI
 mongo = PyMongo(app)
 
 def __repr__(self):
